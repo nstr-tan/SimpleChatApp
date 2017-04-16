@@ -19,8 +19,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextFieldDe
     
     @IBOutlet weak var messageTextField: UITextField!
    
-     @IBOutlet weak var logoutButton: UIButton!
-     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
