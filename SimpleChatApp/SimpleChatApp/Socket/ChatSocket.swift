@@ -11,7 +11,7 @@ class ChatSocket {
     
     private var socketClient: SocketIOClient
     
-    // Instance - Singleton
+    // Instance
     init (token: String) {
         
         self.socketClient = SocketIOClient(socketURL: URL(string:Network.baseURL)!,config: [.connectParams(["token":token])])
