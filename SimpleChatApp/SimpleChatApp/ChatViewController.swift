@@ -73,6 +73,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextFieldDe
         self.logoutButton.layer.cornerRadius = 5
         self.sendButton.layer.cornerRadius = 5
         
+        // listen if app is active and in this view
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMessages), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -122,6 +124,29 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextFieldDe
         }
     }
     
+    func reloadMessages(){
+        
+        self.activityIndicator.startAnimating()
+        self.sendButton.isEnabled = false
+        self.messageTextField.isEnabled = false
+        
+        // remove handler and disconnect
+        self.chatSocket?.disconnect()
+        
+        // remove all messages
+        self.messageArray.removeAll()
+        self.tableView.reloadData()
+        
+        // reconnect
+        self.chatSocket?.connect {
+            // listen
+            self.chatSocket?.listenMessages(completion: { (messageArray) in
+                
+                self.addMessages(messageArray: messageArray)
+            })
+        }
+        
+    }
     
     @IBAction func sendMessage() {
         
