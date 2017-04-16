@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeMessageTableViewCell" rowHeight="117" id="POX-bb-fjy" customClass="MeMessageTableViewCell" customModule="SimpleChatApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="POX-bb-fjy" id="okQ-rz-nT7">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmh-k1-o6a">
+                        <rect key="frame" x="327" y="42.5" width="40" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="KWr-BD-eUS"/>
+                            <constraint firstAttribute="height" constant="16" id="TzL-5w-8Ec"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                        <color key="textColor" red="0.36254033446311951" green="0.44793719053268433" blue="0.51091402769088745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-Wx-aUV">
+                        <rect key="frame" x="357" y="15" width="10" height="25.5"/>
+                        <color key="backgroundColor" red="0.53431397680000003" green="0.89039987330000003" blue="0.02771638148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-me" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-1I-k94">
+                        <rect key="frame" x="365" y="11.5" width="10" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="OTE-wk-1E2"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="pmh-k1-o6a" secondAttribute="bottom" constant="1" id="2pg-jd-467"/>
+                    <constraint firstItem="gCh-Wx-aUV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="okQ-rz-nT7" secondAttribute="leading" constant="30" id="Brf-3U-TZd"/>
+                    <constraint firstItem="pmh-k1-o6a" firstAttribute="top" secondItem="gCh-Wx-aUV" secondAttribute="bottom" constant="2" id="FjW-J7-9nk"/>
+                    <constraint firstItem="pmh-k1-o6a" firstAttribute="trailing" secondItem="gCh-Wx-aUV" secondAttribute="trailing" id="Tiu-Zy-CW4"/>
+                    <constraint firstItem="pmh-k1-o6a" firstAttribute="top" secondItem="d4e-1I-k94" secondAttribute="bottom" constant="10" id="cFC-3L-xrf"/>
+                    <constraint firstAttribute="trailing" secondItem="pmh-k1-o6a" secondAttribute="trailing" constant="8" id="p1h-Wa-gb3"/>
+                    <constraint firstItem="gCh-Wx-aUV" firstAttribute="top" secondItem="okQ-rz-nT7" secondAttribute="top" constant="15" id="sTW-ph-sks"/>
+                    <constraint firstAttribute="trailing" secondItem="d4e-1I-k94" secondAttribute="trailing" id="xG9-yY-FJX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="messageTextView" destination="gCh-Wx-aUV" id="EGf-N7-aSh"/>
+            </connections>
+            <point key="canvasLocation" x="-187.5" y="253.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow-me" width="10" height="21"/>
+    </resources>
+</document>
