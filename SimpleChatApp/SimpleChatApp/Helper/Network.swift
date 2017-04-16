@@ -58,7 +58,7 @@ class Network {
         task.resume()
     }
     
-    // Post request
+    // Get request
     func get(endpoint: String, paramString: String) {
         
         let url = "\(Network.baseURL)\(endpoint)"
